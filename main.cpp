@@ -4,15 +4,14 @@
 using namespace std;
 
 
-// ===============================
+// =============================
 // VARIABLES GLOBALES
-// ===============================
+// =============================
 
 const int MAX = 20;
 
 string nombres[MAX];
 string categorias[MAX];
-
 int edades[MAX];
 int ganados[MAX];
 int ranking[MAX];
@@ -20,13 +19,12 @@ int ranking[MAX];
 int cantidad = 0;
 
 
-// ===============================
-// FUNCION MENU
-// ===============================
+// =============================
+// MENU PRINCIPAL
+// =============================
 
 void mostrarMenu()
 {
-
     cout << "\n===== SISTEMA DE JUGADORES DE TENIS =====\n";
     cout << "1. Registrar jugador\n";
     cout << "2. Mostrar jugadores\n";
@@ -35,26 +33,23 @@ void mostrarMenu()
     cout << "5. Calcular nivel del jugador\n";
     cout << "6. Salir\n";
     cout << "Seleccione una opcion: ";
-
 }
 
-
-
-// ===============================
+// =============================
 // REGISTRAR JUGADOR
-// ===============================
+// =============================
 
 void registrarJugador()
 {
 
     if(cantidad >= MAX)
     {
-        cout << "No se pueden registrar mas jugadores\n";
+        cout << "No hay espacio disponible\n";
         return;
     }
 
 
-    cout << "Nombre: ";
+    cout << "\nNombre: ";
     cin >> nombres[cantidad];
 
 
@@ -78,14 +73,11 @@ void registrarJugador()
 
 
     cout << "Jugador registrado correctamente\n";
-
 }
 
-
-
-// ===============================
+// =============================
 // MOSTRAR JUGADORES
-// ===============================
+// =============================
 
 void mostrarJugadores()
 {
@@ -97,38 +89,35 @@ void mostrarJugadores()
     }
 
 
-    for(int i = 0; i < cantidad; i++)
+    for(int i=0; i<cantidad; i++)
     {
 
-        cout << "\nJugador #" << i+1 << endl;
+        cout << "\nJugador " << i+1 << endl;
+
         cout << "Nombre: " << nombres[i] << endl;
         cout << "Categoria: " << categorias[i] << endl;
         cout << "Edad: " << edades[i] << endl;
-        cout << "Victorias: " << ganados[i] << endl;
+        cout << "Ganados: " << ganados[i] << endl;
         cout << "Ranking: " << ranking[i] << endl;
 
     }
 
 }
 
-
-
-// ===============================
+// =============================
 // BUSCAR JUGADOR
-// ===============================
+// =============================
 
 void buscarJugador()
 {
 
     string buscar;
 
-
     cout << "Ingrese nombre del jugador: ";
     cin >> buscar;
 
 
-
-    for(int i = 0; i < cantidad; i++)
+    for(int i=0; i<cantidad; i++)
     {
 
         if(nombres[i] == buscar)
@@ -137,10 +126,9 @@ void buscarJugador()
             cout << "\nJugador encontrado\n";
             cout << "Nombre: " << nombres[i] << endl;
             cout << "Categoria: " << categorias[i] << endl;
-            cout << "Ranking: " << ranking[i] << endl;
+            cout << "Edad: " << edades[i] << endl;
 
             return;
-
         }
 
     }
@@ -150,88 +138,53 @@ void buscarJugador()
 
 }
 
-
-
-// ===============================
+// =============================
 // REPORTE GENERAL
-// ===============================
+// =============================
 
 void reporteGeneral()
 {
 
-    if(cantidad == 0)
-    {
-        cout << "No existen datos\n";
-        return;
-    }
-
-
-    int suma = 0;
-    int mayor = ganados[0];
-
-
-    for(int i = 0; i < cantidad; i++)
-    {
-
-        suma += ganados[i];
-
-
-        if(ganados[i] > mayor)
-        {
-            mayor = ganados[i];
-        }
-
-    }
-
-
-    cout << "\nReporte general\n";
-    cout << "Total jugadores: " << cantidad << endl;
-    cout << "Promedio de victorias: " << suma/cantidad << endl;
-    cout << "Mayor cantidad de victorias: " << mayor << endl;
+    cout << "\nTotal jugadores registrados: "
+         << cantidad << endl;
 
 
 }
 
-
-
-// ===============================
-// COMPONENTE CREATIVO
-// ===============================
+// =============================
+// NIVEL DEL JUGADOR
+// =============================
 
 void calcularNivel()
 {
 
     string nombre;
 
-
-    cout << "Ingrese nombre del jugador: ";
+    cout << "Nombre del jugador: ";
     cin >> nombre;
 
 
-
-    for(int i = 0; i < cantidad; i++)
+    for(int i=0; i<cantidad; i++)
     {
 
         if(nombres[i] == nombre)
         {
 
-
             if(ganados[i] >= 10)
             {
-                cout << "Nivel: Profesional\n";
+                cout << "Nivel Profesional\n";
             }
             else if(ganados[i] >= 5)
             {
-                cout << "Nivel: Intermedio\n";
+                cout << "Nivel Intermedio\n";
             }
             else
             {
-                cout << "Nivel: Principiante\n";
+                cout << "Nivel Principiante\n";
             }
 
 
             return;
-
         }
 
     }
@@ -241,11 +194,9 @@ void calcularNivel()
 
 }
 
-
-
-// ===============================
+// =============================
 // PROGRAMA PRINCIPAL
-// ===============================
+// =============================
 
 int main()
 {
@@ -258,9 +209,7 @@ int main()
 
         mostrarMenu();
 
-
         cin >> opcion;
-
 
 
         switch(opcion)
@@ -296,13 +245,16 @@ int main()
                 break;
 
 
-        }
-
-
-        }while(opcion != 6);
-
-
-
-        return 0;
+            default:
+                cout << "Opcion incorrecta\n";
 
         }
+
+
+    }while(opcion != 6);
+
+
+
+    return 0;
+
+}
