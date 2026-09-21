@@ -296,16 +296,13 @@ int main()
                 break;
 
 
-            default:
-                cout << "Opcion incorrecta\n";
-
         }
 
 
-    }while(opcion != 6);
+        }while(opcion != 6);
 
 
 
-    return 0;
+        return 0;
 
-}
+        }
