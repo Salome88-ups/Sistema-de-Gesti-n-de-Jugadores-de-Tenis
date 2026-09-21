@@ -155,6 +155,7 @@ void reporteGeneral()
 // =============================
 // NIVEL DEL JUGADOR
 // =============================
+// Componente creativo: clasificacion del nivel del jugador
 
 void calcularNivel()
 {
