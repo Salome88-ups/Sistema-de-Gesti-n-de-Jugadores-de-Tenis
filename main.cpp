@@ -37,6 +37,100 @@ int main()
 
         mostrarMenu();
 
+        void registrarJugador()
+{
+
+if(cantidad>=MAX)
+{
+    cout<<"No se pueden registrar mas jugadores\n";
+    return;
+}
+
+
+cout<<"Nombre: ";
+cin>>nombres[cantidad];
+
+
+cout<<"Categoria: ";
+cin>>categorias[cantidad];
+
+
+cout<<"Edad: ";
+cin>>edades[cantidad];
+
+
+cout<<"Partidos ganados: ";
+cin>>ganados[cantidad];
+
+
+cout<<"Ranking: ";
+cin>>ranking[cantidad];
+
+
+cantidad++;
+
+cout<<"Jugador registrado correctamente\n";
+
+}
+
+
+
+void mostrarJugadores()
+{
+
+if(cantidad==0)
+{
+    cout<<"No existen jugadores registrados\n";
+    return;
+}
+
+
+for(int i=0;i<cantidad;i++)
+{
+
+cout<<"\nJugador "<<i+1;
+cout<<"\nNombre: "<<nombres[i];
+cout<<"\nCategoria: "<<categorias[i];
+cout<<"\nEdad: "<<edades[i];
+cout<<"\nGanados: "<<ganados[i];
+cout<<"\nRanking: "<<ranking[i]<<"\n";
+
+}
+
+}
+
+
+
+void buscarJugador()
+{
+
+string buscar;
+
+cout<<"Ingrese nombre a buscar: ";
+cin>>buscar;
+
+
+for(int i=0;i<cantidad;i++)
+{
+
+if(nombres[i]==buscar)
+{
+
+cout<<"Jugador encontrado\n";
+cout<<"Categoria: "<<categorias[i];
+cout<<"\nRanking: "<<ranking[i];
+
+return;
+
+}
+
+}
+
+
+cout<<"Jugador no encontrado\n";
+
+}
+
         cin >> opcion;
 
 
@@ -44,15 +138,15 @@ int main()
         {
 
             case 1:
-                cout<<"Registro seleccionado\n";
+                registrarJugador();
                 break;
 
             case 2:
-                cout<<"Listado seleccionado\n";
+                mostrar jugador();
                 break;
 
             case 3:
-                cout<<"Busqueda seleccionada\n";
+                buscar jugador();
                 break;
 
             case 4:
