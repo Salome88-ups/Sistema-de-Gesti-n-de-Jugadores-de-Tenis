@@ -38,6 +38,7 @@ void mostrarMenu()
 // =============================
 // REGISTRAR JUGADOR
 // =============================
+// Funcion para registrar jugadores en arreglos
 
 void registrarJugador()
 {
