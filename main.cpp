@@ -150,11 +150,11 @@ cout<<"Jugador no encontrado\n";
                 break;
 
             case 4:
-                cout<<"Reporte seleccionado\n";
+                reporteGeneral();
                 break;
 
             case 5:
-                cout<<"Nivel seleccionado\n";
+                calcularNivel();
                 break;
 
             case 6:
@@ -170,5 +170,86 @@ cout<<"Jugador no encontrado\n";
 
 
 return 0;
+
+}
+
+void reporteGeneral()
+{
+
+if(cantidad==0)
+{
+cout<<"No existen datos\n";
+return;
+}
+
+
+int suma=0;
+int mejor=ganados[0];
+
+
+for(int i=0;i<cantidad;i++)
+{
+
+suma+=ganados[i];
+
+
+if(ganados[i]>mejor)
+{
+mejor=ganados[i];
+}
+
+}
+
+
+cout<<"Promedio partidos ganados: "
+<<suma/cantidad;
+
+
+cout<<"\nMayor cantidad de victorias: "
+<<mejor;
+
+
+}
+
+
+
+void calcularNivel()
+{
+
+string nombre;
+
+cout<<"Jugador: ";
+cin>>nombre;
+
+
+for(int i=0;i<cantidad;i++)
+{
+
+if(nombres[i]==nombre)
+{
+
+
+if(ganados[i]>=10)
+{
+cout<<"Nivel: Profesional";
+}
+else if(ganados[i]>=5)
+{
+cout<<"Nivel: Intermedio";
+}
+else
+{
+cout<<"Nivel: Principiante";
+}
+
+
+return;
+
+}
+
+
+}
+
+cout<<"Jugador no encontrado";
 
 }
