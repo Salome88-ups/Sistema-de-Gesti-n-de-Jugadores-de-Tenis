@@ -1,37 +1,49 @@
 # Sistema de Gestión de Jugadores de Tenis
 
-## Descripción
+## Descripción del proyecto
 
-Programa desarrollado en C++ para administrar jugadores de tenis mediante consola.
+Este proyecto consiste en un sistema desarrollado en C++ para gestionar información básica de jugadores de tenis mediante una aplicación de consola.
 
-## Datos registrados
+El programa permite registrar, consultar y procesar datos utilizando arreglos unidimensionales, funciones, estructuras condicionales y ciclos repetitivos.
 
-- Nombre
+## Datos administrados
+
+El sistema almacena hasta 20 jugadores con la siguiente información:
+
+- Nombre del jugador
 - Categoría
 - Edad
 - Partidos ganados
 - Ranking
 
-## Funciones
+## Funcionalidades del sistema
 
-- Registrar jugadores
-- Mostrar jugadores
-- Buscar jugadores
-- Reporte general
-- Cálculo de nivel deportivo
+El programa permite:
+
+1. Registrar jugadores.
+2. Mostrar todos los jugadores registrados.
+3. Buscar jugadores mediante búsqueda secuencial.
+4. Generar reportes generales.
+5. Calcular el nivel deportivo del jugador.
+6. Salir del sistema.
 
 ## Componente creativo
 
-El sistema calcula el nivel del jugador según sus partidos ganados:
+El sistema incluye una función adicional que calcula el nivel del jugador según la cantidad de partidos ganados:
 
-10 o más victorias:
-Profesional
+- 10 o más victorias: Profesional.
+- Entre 5 y 9 victorias: Intermedio.
+- Menos de 5 victorias: Principiante.
 
-5 a 9 victorias:
-Intermedio
+## Requisitos para ejecutar
 
-Menos de 5:
-Principiante
+Compilar:
+
+g++ main.cpp -o tenis
+
+Ejecutar:
+
+./tenis
 
 
 ## Autor
